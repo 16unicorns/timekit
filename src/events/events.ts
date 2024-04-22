@@ -4,6 +4,7 @@ export interface Event {
     description: string;
     topic: EventTopic;
     source: string;
+    public?: boolean;
 }
 
 // Enum for event names

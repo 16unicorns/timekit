@@ -1,17 +1,10 @@
 import { Schema } from "../schema";
+import { Event } from "../events";
 
 export interface Plugin {
     name: string;
     description?: string;
     version?: string;
-}
-
-export interface Event {
-    name: string;
-    description?: string;
-    topic: string;
-    source?: string;
-    public?: boolean;
 }
 
 export interface Agent {

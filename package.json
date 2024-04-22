@@ -3,20 +3,29 @@
   "description": "A lib for flocalhost plugin development",
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/16unicorns/timekit.git"
   },
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.11",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "license": "ISC",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build-old": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^19.2.2",
     "@eslint/js": "^9.1.1",
@@ -28,6 +37,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.7.0",
     "vite": "^5.2.10"
